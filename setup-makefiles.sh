@@ -19,8 +19,8 @@
 set -e
 
 # Required!
-export DEVICES=o7prolte
-export DEVICE_COMMON=o7-common
+export DEVICES=j5xnlte
+export DEVICE_COMMON=j5x-common
 export BOARD_COMMON=msm8916-common
 export VENDOR=samsung
 

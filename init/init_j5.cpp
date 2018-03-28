@@ -45,11 +45,37 @@ void init_target_properties(void)
 	/* get the bootloader string */
 	std::string bootloader = android::base::GetProperty("ro.bootloader", "");
 
-	if (bootloader.find("G600FY") == 0) {
-		device = (char *)"o7prolte";
-		model = (char *)"SM-G600FY";
-		name = (char *)"o7prolte";
-		network_type=LTE_DEVICE;
+	if (bootloader.find("J510FN") == 0) {
+                build_id = (char *)"NMF26X";
+                device = (char *)"j5xnlte";
+                model = (char *)"SM-J510FN";
+                name = (char *)"j5xnlte";
+                network_type=LTE_DEVICE;
+                version_release = (char *)"7.1.1";
+	}
+	else if (bootloader.find("J510MN") == 0) {
+                build_id = (char *)"NMF26X";
+                device = (char *)"j5xnlte";
+                model = (char *)"SM-J510MN";
+                name = (char *)"j5xnlte";
+                network_type=LTE_DEVICE;
+                version_release = (char *)"7.1.1";
+	}
+	else if (bootloader.find("J510H") == 0) {
+                build_id = (char *)"NMF26X";
+                device = (char *)"j5x3g";
+                model = (char *)"SM-J510H";
+                name = (char *)"j5x3g";
+                network_type=GSM_DEVICE;
+                version_release = (char *)"7.1.1";
+    }
+	else if (bootloader.find("J510GN") == 0) {
+                build_id = (char *)"NMF26X";
+                device = (char *)"j5xnlte";
+                model = (char *)"SM-J510GN";
+                name = (char *)"j5xnlte";
+                network_type=LTE_DEVICE;
+                version_release = (char *)"7.1.1";
 	}
 	else {
 		return;
@@ -63,3 +89,4 @@ void init_target_properties(void)
 	set_target_properties(build_id, bootloader_str, name, device, model,
 		       network_type, operator_alpha, operator_numeric, version_release);
 }
+
